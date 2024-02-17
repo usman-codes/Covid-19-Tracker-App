@@ -32,9 +32,9 @@ class _home_screenState extends State<home_screen>
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-        child: Padding(
+    return SafeArea(
+      child: Scaffold(
+        body: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Column(
             children: [
@@ -54,18 +54,32 @@ class _home_screenState extends State<home_screen>
                 chartType: ChartType.disc,
                 colorList: colorList,
               ),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * .11,
+              ),
               Card(
                 child: Padding(
                   padding: EdgeInsets.symmetric(
-                      vertical: MediaQuery.of(context).size.height * .06),
+                      vertical: MediaQuery.of(context).size.height * .05),
                   child: Column(
                     children: [
                       reuserow(title: "Total", value: "20"),
                       reuserow(title: "Recovered", value: "15"),
-                      reuserow(title: "Death", value: "5"),
+                      reuserow(title: "Death", value: "5")
                     ],
                   ),
                 ),
+              ),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * .01,
+              ),
+              Container(
+                height: 50,
+                decoration: BoxDecoration(
+                  color: Color(0xFF1aa260),
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: Center(child: Text("Track Countires")),
               )
             ],
           ),
@@ -93,7 +107,7 @@ class reuserow extends StatelessWidget {
             ],
           ),
           SizedBox(
-            height: 5,
+            height: 10,
           ),
           Divider()
         ],
