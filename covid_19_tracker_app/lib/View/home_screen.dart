@@ -32,30 +32,27 @@ class _home_screenState extends State<home_screen>
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        body: Padding(
+    return Scaffold(
+      body: SafeArea(
+        child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Column(
             children: [
-              SizedBox(
-                height: MediaQuery.of(context).size.height * .01,
-              ),
               PieChart(
                 dataMap: const {
                   "Total": 20,
                   "Recovered": 15,
                   "Deaths": 5,
                 },
-                chartRadius: MediaQuery.of(context).size.width / 2.5,
+                chartRadius: MediaQuery.of(context).size.width / 2.3,
                 legendOptions:
-                    LegendOptions(legendPosition: LegendPosition.left),
-                animationDuration: Duration(milliseconds: 1200),
+                    const LegendOptions(legendPosition: LegendPosition.left),
+                animationDuration: const Duration(milliseconds: 1200),
                 chartType: ChartType.disc,
                 colorList: colorList,
               ),
               SizedBox(
-                height: MediaQuery.of(context).size.height * .11,
+                height: MediaQuery.of(context).size.height * .02,
               ),
               Card(
                 child: Padding(
@@ -76,10 +73,10 @@ class _home_screenState extends State<home_screen>
               Container(
                 height: 50,
                 decoration: BoxDecoration(
-                  color: Color(0xFF1aa260),
+                  color: const Color(0xFF1aa260),
                   borderRadius: BorderRadius.circular(10),
                 ),
-                child: Center(child: Text("Track Countires")),
+                child: const Center(child: Text("Track Countires")),
               )
             ],
           ),
@@ -106,10 +103,10 @@ class reuserow extends StatelessWidget {
               Text(value),
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
-          Divider()
+          const Divider()
         ],
       ),
     );
